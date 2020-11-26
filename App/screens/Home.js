@@ -55,6 +55,7 @@ export default () => {
         text="GBP"
         value="123"
         onButtonPress={() => alert("pressed button")}
+        editable={false}
         />
 
     </View>)
