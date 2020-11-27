@@ -18,8 +18,7 @@ export const KeyboardSpacer = ({ style, onToggle = () => null }) => {
         return;
       }
 
-      const screenHeight = Dimensions.get('window').height;
-      const newKeyboardSpace = screenHeight - event.endCoordinates.screenY;
+      const newKeyboardSpace = 50;
       setKeyboardSpace(newKeyboardSpace);
       onToggle(true, newKeyboardSpace);
     };
