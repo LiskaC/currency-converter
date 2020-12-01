@@ -32,6 +32,6 @@ const ModalStackScreen = () => (
 
 export default () => (
     <NavigationContainer>
-        <ModalcdStackScreen />
+        <ModalStackScreen />
     </NavigationContainer>
 )
