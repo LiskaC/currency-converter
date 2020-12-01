@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from '../screens/Home';
 import Options from '../screens/Options';
+import CurrencyList from '../screens/CurrencyList';
 
 const MainStack = createStackNavigator();
 const MainStackScreen = () => (
@@ -16,8 +17,21 @@ const MainStackScreen = () => (
     </MainStack.Navigator>
 );
 
+const ModalStack = createStackNavigator();
+const ModalStackScreen = () => (
+    <ModalStack.Navigator>
+        <ModalStack.Screen
+         name="CurrencyList" 
+         component={CurrencyList}
+         options={({ route }) => ({
+             title: route.params && route.params.title //route.params && checks that routes exist before trying to call properties on it
+         })} 
+         />
+    </ModalStack.Navigator>
+)
+
 export default () => (
     <NavigationContainer>
-        <MainStackScreen />
+        <ModalcdStackScreen />
     </NavigationContainer>
 )

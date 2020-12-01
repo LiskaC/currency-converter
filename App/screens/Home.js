@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, StyleSheet, StatusBar, Image, Dimensions, Text, ScrollView, TouchableOpacity, TouchableOpacityBase } from 'react-native';
+import { View, StyleSheet, StatusBar, Image, Dimensions, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { ConversionInput } from "../components/ConversionInput";
 import { format } from "date-fns";
 import { Entypo } from "@expo/vector-icons";
@@ -88,7 +88,7 @@ export default ({ navigation }) => {
             <ConversionInput
             text={basecurrency}
             value="123"
-            onButtonPress={() => alert("pressed button")}
+            onButtonPress={() => navigation.push("CurrencyList", {title: "Base Currency" })}
             onChangeText={text => console.log("text", text)}
             keyboardType="numeric"
             />
@@ -96,7 +96,7 @@ export default ({ navigation }) => {
             <ConversionInput
             text={quotecurrency}
             value="123"
-            onButtonPress={() => alert("pressed button")}
+            onButtonPress={() => navigation.push("CurrencyList", {title: "Quote Currency" })}
             editable={false}
             />
 
